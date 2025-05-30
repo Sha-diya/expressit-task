@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   return (
-    <div className="bg-white p-4 rounded-xl shadow hover:shadow-lg transition">
+    <div className="bg-pink-120 p-4 rounded-xl shadow-50 hover:shadow-lg transition">
       <img
         src={product?.images?.[0]?.secure_url}
         alt={product?.name}
-        className="w-full h-48 object-cover rounded-md"
+        className="h-100 object-cover rounded-md"
       />
       <h2 className="text-xl font-semibold mt-2">{product?.name}</h2>
       <p className="text-gray-500">{product?.price} TK</p>

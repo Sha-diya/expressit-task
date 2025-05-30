@@ -8,7 +8,7 @@ const SingleProduct = () => {
 
   useEffect(() => {
     axios.get(`https://glore-bd-backend-node-mongo.vercel.app/api/product/${id}`)
-      .then(res => setProduct(res.data.data)) // ✅ Fix here
+      .then(res => setProduct(res.data.data))
       .catch(err => console.error(err));
   }, [id]);
 
@@ -16,11 +16,10 @@ const SingleProduct = () => {
 
   return (
     <div className="p-4 max-w-xl mx-auto">
-      {/* ✅ Note: Your API returns product.images (array) */}
       <img 
         src={product?.images?.[0]?.secure_url} 
         alt={product?.name} 
-        className="w-full rounded-md" 
+        className="object-cover rounded-xl" 
       />
       <h1 className="text-2xl font-bold mt-4">{product?.name}</h1>
       <p className="text-gray-600">{product?.description}</p>

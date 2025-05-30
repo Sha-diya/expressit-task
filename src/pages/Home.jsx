@@ -21,11 +21,11 @@ const Home = () => {
     <div className="p-4 space-y-10">
       {/* 🔷 উপরের বড় প্রোডাক্ট */}
       {featuredProduct && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-gray-100 p-6 rounded-xl shadow-lg">
+        <div className="object-cover w-full h-160 bg-pink-100 p-6 rounded-xl flex flex-col md:flex-row items-center space-x-6">
           <img
             src={featuredProduct.images?.[0]?.secure_url}
             alt={featuredProduct.name}
-            className="w-full h-96 object-cover rounded-xl"
+            className="h-150 object-cover rounded-xl"
           />
           <div>
             <h1 className="text-3xl font-bold mb-2">{featuredProduct.name}</h1>
