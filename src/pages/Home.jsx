@@ -1,52 +1,69 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import ProductCard from '../components/ProductCard';
+import { useState, useEffect } from "react";
+import axios from "axios";
+import ProductCard from "../components/ProductCard";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get("https://glore-bd-backend-node-mongo.vercel.app/api/product")
-      .then(res => {
-        setProducts(res.data.data); // Corrected data extraction
+    axios
+      .get("https://glore-bd-backend-node-mongo.vercel.app/api/product")
+      .then((res) => {
+        setProducts(res.data.data);
       })
-      .catch(err => console.error(err));
+      .catch((err) => console.error(err));
   }, []);
 
-  // ধরে নিচ্ছি প্রথম প্রোডাক্টকে হাইলাইট করবা
-  const featuredProduct = products[0];
-  const otherProducts = products.slice(1);
-
   return (
-    <div className="p-4 space-y-10">
-      {/* 🔷 উপরের বড় প্রোডাক্ট */}
-      {featuredProduct && (
-        <div className="object-cover w-full h-160 bg-pink-100 p-6 rounded-xl flex flex-col md:flex-row items-center space-x-6">
-          <img
-            src={featuredProduct.images?.[0]?.secure_url}
-            alt={featuredProduct.name}
-            className="h-150 object-cover rounded-xl"
-          />
-          <div>
-            <h1 className="text-3xl font-bold mb-2">{featuredProduct.name}</h1>
-            <p className="text-gray-700 mb-4">{featuredProduct.description}</p>
-            <p className="text-xl font-semibold text-green-600 mb-4">{featuredProduct.price} TK</p>
-            <a
-              href={`/single-product/${featuredProduct._id}`}
-              className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-            >
-              View Product
-            </a>
+    <div className="space-y-5 bg-pink-100 text-gray-900 min-h-screen">
+      {/* 🔥 Hero Section with image beside text, styled as a card */}
+      <div className="bg-pink-100 py-10 px-4">
+        <div className="bg-pink-100 max-w-7xl mx-auto">
+          <div className="bg-pink-50 rounded-2xl shadow-lg p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-10">
+            {/* Left side – Centered Bangla Text */}
+            <div className="text-center space-y-4 w-full md:w-1/2 flex flex-col items-center">
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-800">
+                নতুন <br /> কালেকশন
+              </h1>
+              <p className="text-lg text-gray-600 max-w-md">
+                ✨ <span className="font-semibold text-pink-600">GloreBD</span> - এর সাথে ফ্যাশনে পা রাখুন নতুন দিগন্তে! ❤️
+              </p>
+              <p className="text-lg text-gray-600 max-w-md">
+                আমাদের এক্সক্লুসিভ নতুন কালেকশন এখন উপলব্ধ! <br />
+                আপনার প্রিয় ফ্যাশন স্টাইল খুঁজে নিন আর নিজেকে সাজান অনন্যভাবে। ❤️
+              </p>
+              <a
+                href="#products"
+                className="inline-block bg-pink-500 text-bold text-white px-6 py-3 rounded-full hover:bg-gray-800 transition"
+              >
+                এখনই কিনুন
+              </a>
+            </div>
+
+            {/* Right side – image */}
+            <div className="md:w-1/2">
+              <img
+                src="/cover-img.jpeg"
+                alt="Fashion Banner"
+                className="w-full h-auto rounded-xl shadow"
+              />
+            </div>
           </div>
         </div>
-      )}
-
-      {/* 🔽 নিচের গ্রিড (বাকি প্রোডাক্টগুলো) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {otherProducts.map(product => (
-          <ProductCard key={product._id} product={product} />
-        ))}
       </div>
+
+      {/* 🛍 Product Grid */}
+      <div className="max-w-7xl mx-auto px-4" id="products">
+        <h2 className="text-2xl font-semibold mb-6 text-center">Latest Products</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {products.slice(0, 8).map((product) => (
+            <ProductCard key={product._id} product={product} />
+          ))}
+        </div>
+      </div>
+
+      <Footer />
     </div>
   );
 };
