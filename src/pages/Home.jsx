@@ -27,7 +27,7 @@ const Home = () => {
                 নতুন <br /> কালেকশন
               </h1>
               <p className="text-lg text-gray-600 max-w-md">
-                ✨ <span className="font-semibold text-pink-600">GloreBD</span> - এর সাথে ফ্যাশনে পা রাখুন নতুন দিগন্তে! ❤️
+                ✨ <span className="font-semibold text-pink-600">GloreBD</span> - এর সাথে ফ্যাশনে পা রাখুন নতুন দিগন্তে!❤️
               </p>
               <p className="text-lg text-gray-600 max-w-md">
                 আমাদের এক্সক্লুসিভ নতুন কালেকশন এখন উপলব্ধ! <br />

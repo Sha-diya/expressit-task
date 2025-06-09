@@ -6,7 +6,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="bg-white rounded-xl shadow hover:shadow-lg transition duration-300 overflow-hidden group mx-auto max-w-full">
-      <Link to={`/single-product/${product._id}`} className="block h-full">
+      <Link to={`/single-product/${product._id}`}>
         {/* Image Container */}
         <div className="flex justify-center items-center h-[30rem] bg-white overflow-visible">
           <div className="inline-block h-[30rem] overflow-hidden">
