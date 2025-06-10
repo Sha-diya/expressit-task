@@ -106,8 +106,9 @@ const Navbar = () => {
 
         {/* Center: Logo */}
         <div className="flex-grow flex justify-center md:justify-center">
-          <Link to="/" className="text-2xl font-bold text-pink-600">
-            G' LORE
+          <Link to="/" className="text-center">
+            <div className="text-2xl font-bold text-pink-600">G' LORE</div>
+            <div className="text-[10px] text-black">CLOTHS THAT SMILE</div>
           </Link>
         </div>
 

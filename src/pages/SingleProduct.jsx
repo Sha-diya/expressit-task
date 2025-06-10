@@ -69,8 +69,8 @@ const SingleProduct = () => {
             </div>
 
             {/* GloreBD Style Order Button */}
-            <button className="bg-[#ec4899] hover:bg-[#db2777] text-white font-bold py-3 px-10 rounded-full text-lg transition duration-300 shadow-md hover:shadow-lg flex items-center gap-2">
-              <FaShoppingCart /> অর্ডার করুন
+            <button className="w-full bg-pink-500 font-bold text-white text-sm px-4 py-2 rounded-full hover:bg-gray-800 transition">
+              অর্ডার দিন
             </button>
           </div>
 

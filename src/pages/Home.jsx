@@ -53,16 +53,31 @@ const Home = () => {
         </div>
       </div>
 
-      {/* 🛍 Product Grid */}
       <div className="max-w-7xl mx-auto px-4" id="products">
-        <h2 className="text-2xl font-semibold mb-6 text-center">Latest Products</h2>
+        <div className="text-center mb-8">
+          <div className="flex items-center justify-center mb-6">
+            <h2 className="text-3xl font-bold mr-4">
+              <span className="text-gray-500">LATEST</span> COLLECTIONS
+            </h2>
+            <div className="border-t-2 border-black-300 w-10"></div>
+          </div>
+          <p className="text-lg text-indigo-700 font-semibold">✨ নতুন স্টাইলে জ্বলে উঠুন! ✨</p>
+          <div className="text-md text-gray-700 mb-8">
+            <p>ট্রেন্ডিং পণ্যগুলোর সাথে থাকুন সবসময় এক ধাপ এগিয়ে!</p>
+            <p>আপনার ফ্যাশন, আপনার পরিচয় <span className="text-pink-600 font-bold">GloreBD</span> এর সাথে।❤️</p>
+          </div>
+        </div>
+         <div className="mb-4">
+            <h3 className="text-xl font-semibold text-left">Women Clothing...</h3>
+          </div>
+        {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.slice(0, 8).map((product) => (
             <ProductCard key={product._id} product={product} />
           ))}
         </div>
       </div>
-
+      
       <Footer />
     </div>
   );
